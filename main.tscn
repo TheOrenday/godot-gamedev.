@@ -3,9 +3,62 @@
 [ext_resource type="Texture2D" uid="uid://pxw5274x6l58" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bpxhcq6df21a" path="res://icon.gd" id="2_0xm2m"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nda5"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbcmv"]
+size = Vector2(128, 128)
+
 [node name="Node2D" type="Node2D" unique_id=941266617]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=922166388]
-position = Vector2(572, 308)
-texture = ExtResource("1_ig7tw")
+[node name="player" type="Area2D" parent="." unique_id=1652354774]
+position = Vector2(569, 295)
 script = ExtResource("2_0xm2m")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="player" unique_id=922166388]
+texture = ExtResource("1_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=686961956]
+shape = SubResource("RectangleShape2D_3nda5")
+
+[node name="coin" type="Area2D" parent="." unique_id=2014762798 groups=["coins"]]
+position = Vector2(1049, 90)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="coin" unique_id=206625988]
+modulate = Color(1, 1, 0.44705883, 1)
+texture = ExtResource("1_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin" unique_id=27475319]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_tbcmv")
+
+[node name="coin2" type="Area2D" parent="." unique_id=483422221 groups=["coins"]]
+position = Vector2(836, 488)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="coin2" unique_id=1439501376]
+modulate = Color(1, 1, 0.44705883, 1)
+texture = ExtResource("1_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin2" unique_id=1985425799]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_tbcmv")
+
+[node name="coin3" type="Area2D" parent="." unique_id=2012324557 groups=["coins"]]
+position = Vector2(158, 109)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="coin3" unique_id=425092131]
+modulate = Color(1, 1, 0.44705883, 1)
+texture = ExtResource("1_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin3" unique_id=1760603831]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_tbcmv")
+
+[connection signal="area_entered" from="player" to="player" method="_on_area_entered"]
