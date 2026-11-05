@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://gqp714ao0exs"]
+
+[ext_resource type="Script" uid="uid://mro0vyno543a" path="res://ball.gd" id="1_4opyw"]
+[ext_resource type="Texture2D" uid="uid://pxw5274x6l58" path="res://icon.svg" id="2_pkvn5"]
+[ext_resource type="Script" uid="uid://di0brjse7a4ky" path="res://paddle.gd" id="3_pkvn5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3nda5"]
+radius = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbcmv"]
+
+[node name="Pong" type="Node2D" unique_id=1972193692]
+
+[node name="ball" type="Area2D" parent="." unique_id=2079172524]
+position = Vector2(576, 324)
+script = ExtResource("1_4opyw")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ball" unique_id=1965458310]
+texture = ExtResource("2_pkvn5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball" unique_id=1211535927]
+shape = SubResource("CircleShape2D_3nda5")
+
+[node name="paddle" type="Area2D" parent="." unique_id=1370018286]
+position = Vector2(50, 324)
+scale = Vector2(0.3, 1.5)
+script = ExtResource("3_pkvn5")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="paddle" unique_id=752403938]
+texture = ExtResource("2_pkvn5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paddle" unique_id=102831982]
+shape = SubResource("RectangleShape2D_tbcmv")
