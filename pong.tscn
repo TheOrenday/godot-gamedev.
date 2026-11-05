@@ -34,4 +34,8 @@ texture = ExtResource("2_pkvn5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paddle" unique_id=102831982]
 shape = SubResource("RectangleShape2D_tbcmv")
 
+[node name="Label" type="Label" parent="." unique_id=345655504]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="area_entered" from="ball" to="ball" method="_on_area_entered"]

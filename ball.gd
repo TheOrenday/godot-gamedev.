@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 		direction.y *= -1
 	if position.x <= 64:
 		score = score + 1
+		$"../Label".text = str(score)
 		print("Puntos: ", score)
 		position = Vector2(576, 324)
 		direction.x = abs(direction.x)
