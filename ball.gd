@@ -20,3 +20,8 @@ func _process(delta: float) -> void:
 	if position.x >= 1088:
 		position.x = 1088
 		direction.x *= -1
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("paddle"):
+		direction.x = abs(direction.x)

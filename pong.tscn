@@ -22,7 +22,7 @@ texture = ExtResource("2_pkvn5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ball" unique_id=1211535927]
 shape = SubResource("CircleShape2D_3nda5")
 
-[node name="paddle" type="Area2D" parent="." unique_id=1370018286]
+[node name="paddle" type="Area2D" parent="." unique_id=1370018286 groups=["paddle"]]
 position = Vector2(50, 324)
 scale = Vector2(0.3, 1.5)
 script = ExtResource("3_pkvn5")
@@ -33,3 +33,5 @@ texture = ExtResource("2_pkvn5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paddle" unique_id=102831982]
 shape = SubResource("RectangleShape2D_tbcmv")
+
+[connection signal="area_entered" from="ball" to="ball" method="_on_area_entered"]
