@@ -1,7 +1,7 @@
 extends Area2D
 var speed = 400.0
 var direction = Vector2(1, 1)
-
+var score = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -15,8 +15,10 @@ func _process(delta: float) -> void:
 		position.y = 584
 		direction.y *= -1
 	if position.x <= 64:
-		position.x = 64
-		direction.x *= -1
+		score = score + 1
+		print("Puntos: ", score)
+		position = Vector2(576, 324)
+		direction.x = abs(direction.x)
 	if position.x >= 1088:
 		position.x = 1088
 		direction.x *= -1

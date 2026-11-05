@@ -23,7 +23,7 @@ texture = ExtResource("2_pkvn5")
 shape = SubResource("CircleShape2D_3nda5")
 
 [node name="paddle" type="Area2D" parent="." unique_id=1370018286 groups=["paddle"]]
-position = Vector2(50, 324)
+position = Vector2(100, 324)
 scale = Vector2(0.3, 1.5)
 script = ExtResource("3_pkvn5")
 metadata/_edit_group_ = true
