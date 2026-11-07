@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://mro0vyno543a" path="res://ball.gd" id="1_4opyw"]
 [ext_resource type="Texture2D" uid="uid://pxw5274x6l58" path="res://icon.svg" id="2_pkvn5"]
 [ext_resource type="Script" uid="uid://di0brjse7a4ky" path="res://paddle.gd" id="3_pkvn5"]
+[ext_resource type="Script" uid="uid://ct6670ty6yi1l" path="res://paddle_2.gd" id="4_m5tya"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3nda5"]
 radius = 64.0
@@ -34,8 +35,34 @@ texture = ExtResource("2_pkvn5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paddle" unique_id=102831982]
 shape = SubResource("RectangleShape2D_tbcmv")
 
+[node name="paddle2" type="Area2D" parent="." unique_id=915637024 groups=["paddle"]]
+position = Vector2(1030, 324)
+scale = Vector2(0.3, 1.5)
+script = ExtResource("4_m5tya")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="paddle2" unique_id=1691398096]
+texture = ExtResource("2_pkvn5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paddle2" unique_id=1467630938]
+shape = SubResource("RectangleShape2D_tbcmv")
+
 [node name="Label" type="Label" parent="." unique_id=345655504]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 900.0
+offset_top = 20.0
+offset_right = 1100.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=943129327]
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
 
 [connection signal="area_entered" from="ball" to="ball" method="_on_area_entered"]
